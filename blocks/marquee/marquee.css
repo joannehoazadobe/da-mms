@@ -1,0 +1,70 @@
+/* =============================================================
+   Marquee — blocks/marquee/marquee.css
+   ============================================================= */
+
+.marquee {
+  overflow: hidden;
+  background-color: var(--color-brand-yellow, #ffd200);
+  padding: 0.625rem 0;
+  width: 100%;
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover/focus for accessibility */
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    white-space: normal;
+    flex-wrap: wrap;
+  }
+
+  /* Only show the first copy when not animating */
+  .marquee-item:not(:first-child) {
+    display: none;
+  }
+}
+
+.marquee-item {
+  display: inline-block;
+  padding: 0 0.5rem;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs, 0.75rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--color-text-dark, #1a1a1a);
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    /* Move left by exactly 1/REPEAT_COUNT of the total width so the loop
+       is perfectly seamless without JS measurement */
+    transform: translateX(-25%);
+  }
+}
+
+/* Reverse direction variant: add class "marquee marquee-reverse" */
+.marquee.marquee-reverse .marquee-track {
+  animation-direction: reverse;
+}
