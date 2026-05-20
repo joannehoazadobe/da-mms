@@ -1,0 +1,146 @@
+/* =============================================================
+   Newsletter — blocks/newsletter/newsletter.css
+   ============================================================= */
+
+.newsletter-wrapper {
+  background-color: var(--color-bg-dark, #1a1a1a);
+  color: var(--color-text-light, #fff);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.newsletter {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.newsletter-heading {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+  color: inherit;
+  margin: 0 0 1.5rem;
+}
+
+/* ---- Form layout ---- */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+@media (min-width: 600px) {
+  .newsletter-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .newsletter-field {
+    flex: 1 1 260px;
+  }
+
+  .newsletter-submit {
+    flex: 0 0 auto;
+    align-self: flex-end;
+  }
+}
+
+.newsletter-label {
+  display: block;
+  font-size: var(--body-font-size-xs, 0.75rem);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  margin-bottom: 0.375rem;
+  color: var(--color-text-light, #fff);
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  background: #fff;
+  color: var(--color-text-dark, #1a1a1a);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s, 0.875rem);
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-brand-yellow, #ffd200);
+}
+
+.newsletter-input:invalid:not(:placeholder-shown) {
+  border-color: #e03030;
+}
+
+/* Inherit button styles from global styles.css and override */
+.newsletter-submit.button.primary {
+  background-color: var(--color-brand-yellow, #ffd200);
+  color: var(--color-text-dark, #1a1a1a);
+  border: 2px solid var(--color-brand-yellow, #ffd200);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  font-weight: 900;
+  padding: 0.625rem 1.5rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .newsletter-submit.button.primary {
+    width: auto;
+  }
+}
+
+.newsletter-submit.button.primary:hover {
+  background-color: var(--color-text-dark, #1a1a1a);
+  color: var(--color-brand-yellow, #ffd200);
+}
+
+.newsletter-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Fine print */
+.newsletter-fine-print {
+  font-size: var(--body-font-size-xxs, 0.688rem);
+  line-height: 1.5;
+  color: rgba(255 255 255 / 70%);
+  margin: 0.5rem 0 0;
+  width: 100%;
+  text-align: left;
+}
+
+.newsletter-fine-print a {
+  color: rgba(255 255 255 / 90%);
+  text-decoration: underline;
+}
+
+.newsletter-fine-print a:hover {
+  color: var(--color-brand-yellow, #ffd200);
+}
+
+/* Error & confirmation */
+.newsletter-error {
+  color: #ffb3b3;
+  font-size: var(--body-font-size-xs, 0.75rem);
+  margin: 0;
+  width: 100%;
+}
+
+.newsletter-confirmation {
+  color: var(--color-brand-yellow, #ffd200);
+  font-weight: 700;
+  font-size: var(--body-font-size-m, 1rem);
+}
