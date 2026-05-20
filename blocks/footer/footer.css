@@ -1,20 +1,257 @@
+/* Footer block - M&M's branded footer */
+
+/* Extracted from source: https://www.mms.com/en-us */
+
+/* Full-width footer wrapper override */
 footer {
   background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
 }
 
+footer .footer-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Footer block root */
+footer .footer {
+  visibility: hidden;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+}
+
+footer .footer[data-block-status="loaded"] {
+  visibility: visible;
+}
+
+/* Content container from fragment */
 footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
+/* Override global p styles inside footer */
 footer .footer p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  color: var(--text-color);
   margin: 0;
 }
 
+/* --- Section 1: Contact Info --- */
+footer .footer .section:first-of-type {
+  padding: 32px 0 48px;
+  border-bottom: 1px solid rgba(4 6 7 / 12%);
+}
+
+footer .footer .section:first-of-type .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Reset EDS button decoration on contact links */
+footer .footer .section:first-of-type .button-container {
+  display: inline;
+  margin: 0;
+}
+
+footer .footer .section:first-of-type a.button:any-link {
+  display: inline;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 300;
+  text-decoration: none;
+  white-space: normal;
+}
+
+footer .footer .section:first-of-type a.button:hover {
+  background-color: transparent;
+  border: none;
+  color: var(--brand-brown);
+  text-decoration: underline;
+}
+
+footer .footer .section:first-of-type p {
+  font-size: var(--body-font-size-s);
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- Section 2: Navigation Columns --- */
+footer .footer .section:nth-of-type(2) {
+  padding: 32px 0 40px;
+  border-bottom: 1px solid rgba(4 6 7 / 12%);
+}
+
+footer .footer .section:nth-of-type(2) .default-content-wrapper {
+  display: block;
+}
+
+/* Footer H2 headings (Help, About M&M'S, Connect with us) */
+footer .footer h2 {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  color: var(--brand-brown);
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.4;
+  margin: 24px 0 12px;
+}
+
+footer .footer .section:nth-of-type(2) h2:first-child {
+  margin-top: 0;
+}
+
+/* Footer navigation lists */
+footer .footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+footer .footer li {
+  margin: 0 0 8px;
+}
+
+/* General footer links */
+footer .footer a:any-link {
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 300;
+  text-decoration: underline;
+  text-decoration-color: var(--text-color);
+}
+
+footer .footer a:hover {
+  color: var(--brand-brown);
+  text-decoration-color: var(--brand-brown);
+}
+
+/* Footer nav links - gold underline from source */
+footer .footer .section:nth-of-type(2) a:any-link {
+  color: var(--brand-brown);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--gold-color);
+  text-underline-offset: 2px;
+}
+
+footer .footer .section:nth-of-type(2) a:hover {
+  color: var(--text-color);
+  text-decoration-color: var(--text-color);
+}
+
+/* --- Section 3: Legal Links & Copyright --- */
+footer .footer .section:last-of-type {
+  padding: 24px 0 32px;
+}
+
+footer .footer .section:last-of-type .default-content-wrapper p:first-child {
+  font-size: var(--body-font-size-xs);
+  line-height: 2;
+  color: var(--text-color);
+}
+
+footer .footer .section:last-of-type .default-content-wrapper p:first-child a:any-link {
+  font-size: var(--body-font-size-xs);
+  font-weight: 300;
+  color: var(--text-color);
+  text-decoration: underline;
+  margin: 0 4px;
+}
+
+footer .footer .section:last-of-type .default-content-wrapper p:first-child a:hover {
+  color: var(--brand-brown);
+}
+
+/* Copyright text */
+footer .footer .section:last-of-type .default-content-wrapper p:last-child {
+  font-size: var(--body-font-size-xs);
+  color: var(--text-color);
+  margin: 16px 0 0;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+/* --- Responsive: Desktop --- */
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 0 48px;
+  }
+
+  /* Contact section: row layout */
+  footer .footer .section:first-of-type .default-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 48px;
+    align-items: baseline;
+  }
+
+  /* Nav columns: grid layout */
+  footer .footer .section:nth-of-type(2) .default-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 32px;
+  }
+
+  /* Each nav column: h2 starts a new "column" via grid placement */
+  footer .footer .section:nth-of-type(2) h2 {
+    margin-top: 0;
+  }
+
+  /* First column: Help heading + first ul */
+  footer .footer .section:nth-of-type(2) h2:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  footer .footer .section:nth-of-type(2) ul:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  /* Second column: About M&M'S heading + second ul */
+  footer .footer .section:nth-of-type(2) h2:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  footer .footer .section:nth-of-type(2) ul:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Third column: Connect with us heading + third ul */
+  footer .footer .section:nth-of-type(2) h2:nth-of-type(3) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  footer .footer .section:nth-of-type(2) ul:nth-of-type(3) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  /* Legal links: inline row on desktop */
+  footer .footer .section:last-of-type .default-content-wrapper p:first-child {
+    line-height: 1.8;
   }
 }
