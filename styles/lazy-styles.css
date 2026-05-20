@@ -1,1 +1,277 @@
 /* add global styles that can be loaded post LCP here */
+/*
+ * styles/lazy-styles.css
+ *
+ * Loaded after LCP. Put everything that doesn't affect above-the-fold
+ * rendering here: animations, non-critical layout, hover states that
+ * don't affect CLS, etc.
+ */
+
+/* ============================================================
+   CARDS BLOCK — MMS product / occasion card overrides
+   ============================================================ */
+
+.cards-wrapper .cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.cards-wrapper .cards-card-body {
+  padding: 0.75rem 0;
+}
+
+.cards-wrapper .cards-card-body h3 {
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  margin-bottom: 0.25rem;
+}
+
+.cards-wrapper .cards-card-body p {
+  font-size: var(--body-font-size-xs);
+  color: var(--color-text-mid);
+}
+
+.cards-wrapper .cards-card-image img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-m);
+}
+
+/* Hover lift effect */
+.cards-wrapper .cards > li {
+  transition: transform var(--transition-base);
+}
+
+.cards-wrapper .cards > li:hover {
+  transform: translateY(-4px);
+}
+
+/* ============================================================
+   HERO BLOCK — MMS homepage hero overrides
+   ============================================================ */
+
+.hero-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-wrapper .hero {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-wrapper .hero > div {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1.5rem;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.hero-wrapper .hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-wrapper .hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-wrapper h1 {
+  color: #fff;
+  text-shadow: 0 1px 4px rgb(0 0 0 / 40%);
+  font-size: var(--heading-font-size-l);
+}
+
+@media (min-width: 768px) {
+  .hero-wrapper h1 {
+    font-size: var(--heading-font-size-xxl);
+  }
+}
+
+/* ============================================================
+   COLUMNS BLOCK — MMS three-up content panels
+   ============================================================ */
+
+.columns-wrapper .columns {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  .columns-wrapper .columns[data-columns="2"] { grid-template-columns: repeat(2, 1fr); }
+  .columns-wrapper .columns[data-columns="3"] { grid-template-columns: repeat(3, 1fr); }
+  .columns-wrapper .columns[data-columns="4"] { grid-template-columns: repeat(4, 1fr); }
+}
+
+.columns-wrapper .columns > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-wrapper .columns > div img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-m);
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   CAROUSEL BLOCK — homepage hero/promo carousel
+   ============================================================ */
+
+.carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-wrapper .carousel-slides {
+  display: flex;
+  transition: transform var(--transition-base);
+  will-change: transform;
+}
+
+.carousel-wrapper .carousel-slide {
+  flex: 0 0 100%;
+  position: relative;
+  min-height: 480px;
+}
+
+.carousel-wrapper .carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-wrapper .carousel-slide-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1.5rem;
+  color: #fff;
+}
+
+/* Prev / next buttons */
+.carousel-wrapper .carousel-prev,
+.carousel-wrapper .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgb(255 255 255 / 80%);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: background-color var(--transition-fast);
+}
+
+.carousel-wrapper .carousel-prev:hover,
+.carousel-wrapper .carousel-next:hover {
+  background: #fff;
+}
+
+.carousel-wrapper .carousel-prev { left: 1rem; }
+.carousel-wrapper .carousel-next { right: 1rem; }
+
+/* Dot indicators */
+.carousel-wrapper .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+}
+
+.carousel-wrapper .carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.carousel-wrapper .carousel-dot.active {
+  background: var(--color-brand-brown);
+  transform: scale(1.25);
+}
+
+/* ============================================================
+   SECTION HEADING UTILITY
+   Reusable eyebrow / section title pattern used across the page
+   ============================================================ */
+
+.section-eyebrow {
+  display: block;
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  color: var(--color-brand-brown);
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   UGC / SOCIAL GALLERY
+   ============================================================ */
+
+.ugc-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+}
+
+@media (min-width: 600px) {
+  .ugc-gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.ugc-gallery-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.ugc-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ugc-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.ugc-gallery-caption {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  font-size: var(--body-font-size-xxs);
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 60%);
+}
