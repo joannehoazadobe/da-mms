@@ -1,257 +1,151 @@
-/* Footer block - M&M's branded footer */
+/* =============================================================
+   Footer — blocks/footer/footer.css
+   ============================================================= */
 
-/* Extracted from source: https://www.mms.com/en-us */
-
-/* Full-width footer wrapper override */
-footer {
-  background-color: var(--light-color);
-  color: var(--text-color);
+.footer-wrapper {
+  background-color: var(--color-bg-dark, #1a1a1a);
+  color: var(--color-text-light, #fff);
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
+  padding: 3rem 1.5rem 2rem;
 }
 
-footer .footer-wrapper {
-  max-width: 100% !important;
-  padding: 0 !important;
-}
-
-/* Footer block root */
-footer .footer {
-  visibility: hidden;
-  background-color: var(--light-color);
-  color: var(--text-color);
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-}
-
-footer .footer[data-block-status="loaded"] {
-  visibility: visible;
-}
-
-/* Content container from fragment */
-footer .footer > div {
-  max-width: var(--content-max-width);
+.footer {
+  max-width: var(--nav-width, 1440px);
   margin: 0 auto;
-  padding: 0 24px;
 }
 
-/* Override global p styles inside footer */
-footer .footer p {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: 1.5;
-  color: var(--text-color);
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem 3rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Column headings ──────────────────────────────────────── */
+
+.footer-section-heading {
+  font-size: var(--body-font-size-xs, 0.75rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--color-text-light, #fff);
+  margin: 0 0 0.875rem;
+}
+
+/* ── Link lists ───────────────────────────────────────────── */
+
+.footer-links {
+  list-style: none;
   margin: 0;
-}
-
-/* --- Section 1: Contact Info --- */
-footer .footer .section:first-of-type {
-  padding: 32px 0 48px;
-  border-bottom: 1px solid rgba(4 6 7 / 12%);
-}
-
-footer .footer .section:first-of-type .default-content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-/* Reset EDS button decoration on contact links */
-footer .footer .section:first-of-type .button-container {
-  display: inline;
-  margin: 0;
-}
-
-footer .footer .section:first-of-type a.button:any-link {
-  display: inline;
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
   padding: 0;
-  margin: 0;
-  color: var(--text-color);
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  font-weight: 300;
-  text-decoration: none;
-  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-footer .footer .section:first-of-type a.button:hover {
-  background-color: transparent;
-  border: none;
-  color: var(--brand-brown);
+.footer-links a {
+  font-size: var(--body-font-size-xs, 0.75rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: rgba(255 255 255 / 75%);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-brand-yellow, #ffd200);
   text-decoration: underline;
 }
 
-footer .footer .section:first-of-type p {
-  font-size: var(--body-font-size-s);
-  color: var(--text-color);
-  margin: 0;
-  line-height: 1.5;
+/* ── Social icons ─────────────────────────────────────────── */
+
+.footer-social {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.25rem;
 }
 
-/* --- Section 2: Navigation Columns --- */
-footer .footer .section:nth-of-type(2) {
-  padding: 32px 0 40px;
-  border-bottom: 1px solid rgba(4 6 7 / 12%);
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255 255 255 / 25%);
+  border-radius: 50%;
+  color: #fff;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
-footer .footer .section:nth-of-type(2) .default-content-wrapper {
+.footer-social a:hover {
+  border-color: var(--color-brand-yellow, #ffd200);
+  background-color: var(--color-brand-yellow, #ffd200);
+  color: var(--color-text-dark, #1a1a1a);
+  text-decoration: none;
+}
+
+.footer-social img,
+.footer-social .icon {
+  width: 18px;
+  height: 18px;
   display: block;
 }
 
-/* Footer H2 headings (Help, About M&M'S, Connect with us) */
-footer .footer h2 {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-s);
-  font-weight: 700;
-  color: var(--brand-brown);
-  text-transform: none;
-  letter-spacing: normal;
-  line-height: 1.4;
-  margin: 24px 0 12px;
+/* ── Legal bar ────────────────────────────────────────────── */
+
+.footer-legal {
+  border-top: 1px solid rgba(255 255 255 / 15%);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: center;
 }
 
-footer .footer .section:nth-of-type(2) h2:first-child {
-  margin-top: 0;
-}
-
-/* Footer navigation lists */
-footer .footer ul {
-  list-style: none;
+.footer-legal a,
+.footer-legal span,
+.footer-legal button {
+  font-size: var(--body-font-size-xxs, 0.688rem);
+  color: rgba(255 255 255 / 60%);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
   padding: 0;
-  margin: 0 0 16px;
+  font-family: inherit;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+  transition: color 0.15s ease;
 }
 
-footer .footer li {
-  margin: 0 0 8px;
+.footer-legal a:hover,
+.footer-legal button:hover {
+  color: var(--color-brand-yellow, #ffd200);
 }
 
-/* General footer links */
-footer .footer a:any-link {
-  color: var(--text-color);
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-xs);
-  font-weight: 300;
-  text-decoration: underline;
-  text-decoration-color: var(--text-color);
+/* ── Copyright ────────────────────────────────────────────── */
+
+.footer-copyright {
+  width: 100%;
+  font-size: var(--body-font-size-xxs, 0.688rem);
+  color: rgba(255 255 255 / 40%);
+  margin: 1.5rem 0 0;
+  letter-spacing: 0.03em;
 }
 
-footer .footer a:hover {
-  color: var(--brand-brown);
-  text-decoration-color: var(--brand-brown);
-}
+/* ── Responsive ───────────────────────────────────────────── */
 
-/* Footer nav links - gold underline from source */
-footer .footer .section:nth-of-type(2) a:any-link {
-  color: var(--brand-brown);
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-xs);
-  font-weight: 700;
-  text-decoration: underline;
-  text-decoration-color: var(--gold-color);
-  text-underline-offset: 2px;
-}
-
-footer .footer .section:nth-of-type(2) a:hover {
-  color: var(--text-color);
-  text-decoration-color: var(--text-color);
-}
-
-/* --- Section 3: Legal Links & Copyright --- */
-footer .footer .section:last-of-type {
-  padding: 24px 0 32px;
-}
-
-footer .footer .section:last-of-type .default-content-wrapper p:first-child {
-  font-size: var(--body-font-size-xs);
-  line-height: 2;
-  color: var(--text-color);
-}
-
-footer .footer .section:last-of-type .default-content-wrapper p:first-child a:any-link {
-  font-size: var(--body-font-size-xs);
-  font-weight: 300;
-  color: var(--text-color);
-  text-decoration: underline;
-  margin: 0 4px;
-}
-
-footer .footer .section:last-of-type .default-content-wrapper p:first-child a:hover {
-  color: var(--brand-brown);
-}
-
-/* Copyright text */
-footer .footer .section:last-of-type .default-content-wrapper p:last-child {
-  font-size: var(--body-font-size-xs);
-  color: var(--text-color);
-  margin: 16px 0 0;
-  line-height: 1.5;
-  opacity: 0.7;
-}
-
-/* --- Responsive: Desktop --- */
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 0 48px;
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1.5rem;
   }
+}
 
-  /* Contact section: row layout */
-  footer .footer .section:first-of-type .default-content-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px 48px;
-    align-items: baseline;
-  }
-
-  /* Nav columns: grid layout */
-  footer .footer .section:nth-of-type(2) .default-content-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0 32px;
-  }
-
-  /* Each nav column: h2 starts a new "column" via grid placement */
-  footer .footer .section:nth-of-type(2) h2 {
-    margin-top: 0;
-  }
-
-  /* First column: Help heading + first ul */
-  footer .footer .section:nth-of-type(2) h2:nth-of-type(1) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  footer .footer .section:nth-of-type(2) ul:nth-of-type(1) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  /* Second column: About M&M'S heading + second ul */
-  footer .footer .section:nth-of-type(2) h2:nth-of-type(2) {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  footer .footer .section:nth-of-type(2) ul:nth-of-type(2) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  /* Third column: Connect with us heading + third ul */
-  footer .footer .section:nth-of-type(2) h2:nth-of-type(3) {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
-  footer .footer .section:nth-of-type(2) ul:nth-of-type(3) {
-    grid-column: 3;
-    grid-row: 2;
-  }
-
-  /* Legal links: inline row on desktop */
-  footer .footer .section:last-of-type .default-content-wrapper p:first-child {
-    line-height: 1.8;
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr;
   }
 }
