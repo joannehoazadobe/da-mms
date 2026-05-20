@@ -1,0 +1,47 @@
+:root {
+  /* M&M's Brand Colors */
+  --background-color: #fff;
+  --text-color: #040607;
+  --link-color: #040607;
+  --link-hover-color: #5a1f06;
+  --brand-brown: #5a1f06;
+  --light-color: #f3f6fa;
+  --dark-color: #005e20;
+  --gold-color: #ffd200;
+
+  /* M&M's Brand Fonts */
+  --body-font-family: "All Together Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
+  --heading-font-family: "All Together Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
+  --accent-font-family: "All Together Serif", "Times New Roman", times, serif;
+
+  /* Body sizes */
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
+
+  /* Heading sizes (mobile-first) */
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 28px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+
+  /* Spacing */
+  --section-padding: 40px;
+  --content-max-width: 1320px;
+  --nav-height: 64px;
+  --breadcrumbs-height: 34px;
+  --header-height: var(--nav-height);
+}
+
+@media (width >= 900px) {
+  :root {
+    --heading-font-size-xxl: 60px;
+    --heading-font-size-xl: 40px;
+    --heading-font-size-l: 24px;
+    --heading-font-size-m: 20px;
+    --heading-font-size-s: 18px;
+    --heading-font-size-xs: 16px;
+  }
+}

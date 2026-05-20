@@ -1,0 +1,22 @@
+{
+  "status": "success",
+  "url": "https://www.mms.com/en-us",
+  "path": "en-us",
+  "timestamp": "2026-05-19T19:52:23.842Z",
+  "title": "Personalized Gifts, Favors and More | M&M'S",
+  "template": "homepage",
+  "blocks": [
+    "hero-gradient",
+    "carousel-marquee",
+    "carousel-occasions",
+    "carousel-occasions",
+    "carousel-occasions",
+    "carousel-occasions",
+    "carousel-occasions",
+    "carousel-occasions",
+    "carousel-occasions",
+    "carousel-occasions",
+    "columns-promo",
+    "carousel-gallery"
+  ]
+}

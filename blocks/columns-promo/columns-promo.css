@@ -1,0 +1,121 @@
+/* Block: columns-promo -- Promotional cards with colored backgrounds */
+
+/* Source: mms.com "let's get personal-ized" section */
+
+.columns-promo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-promo > div > div {
+  background-color: rgb(14 116 225);
+  border-radius: 10px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Card color variants */
+.columns-promo > div > div:nth-child(2) {
+  background-color: rgb(0 94 32);
+}
+
+.columns-promo > div > div:nth-child(3) {
+  background-color: rgb(255 171 223);
+}
+
+/* Images */
+.columns-promo img {
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* Description paragraphs */
+.columns-promo p {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #fff;
+  margin: 0 0 24px;
+}
+
+.columns-promo > div > div > p:first-child {
+  margin: 0 0 16px;
+  width: 100%;
+}
+
+.columns-promo > div > div:nth-child(3) p {
+  color: var(--brand-brown);
+}
+
+/* Headings */
+.columns-promo h3 {
+  font-family: var(--accent-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+/* Third card: dark text for light background */
+.columns-promo > div > div:nth-child(3) h3 {
+  color: var(--brand-brown);
+}
+
+/* CTA buttons - style as underline links, push to bottom */
+.columns-promo .button-container {
+  margin: 0;
+  margin-top: auto;
+}
+
+.columns-promo a.button:any-link {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 0;
+  padding: 4px 0;
+  font-family: var(--accent-font-family);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #fff;
+  text-decoration: none;
+  white-space: normal;
+}
+
+.columns-promo a.button:hover,
+.columns-promo a.button:focus {
+  background-color: transparent;
+  border-color: #fff;
+  opacity: 0.8;
+}
+
+/* Third card CTA: dark color */
+.columns-promo > div > div:nth-child(3) a.button:any-link {
+  color: var(--brand-brown);
+  border-bottom-color: var(--brand-brown);
+}
+
+.columns-promo > div > div:nth-child(3) a.button:hover,
+.columns-promo > div > div:nth-child(3) a.button:focus {
+  border-color: var(--brand-brown);
+}
+
+@media (width >= 900px) {
+  .columns-promo > div {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .columns-promo > div > div {
+    flex: 1;
+    padding: 40px 24px 32px;
+  }
+}

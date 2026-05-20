@@ -1,0 +1,174 @@
+/* Block: hero-gradient */
+
+/* Full-width hero with pastel pink/gradient background, two-column layout */
+
+/* Full-width wrapper override - pink bg extends edge to edge */
+.hero-gradient-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+  background-color: rgb(255 195 194);
+}
+
+.hero-gradient {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  background-color: rgb(255 195 194);
+  padding: 32px 24px;
+  min-height: 360px;
+  overflow: hidden;
+  color: var(--brand-brown);
+}
+
+/* Cell styling */
+.hero-gradient > div > div {
+  width: 100%;
+}
+
+/* Row 1: Image */
+.hero-gradient > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Row 2: Text content */
+.hero-gradient > div:last-child {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 0 24px;
+}
+
+/* Eyebrow heading (first h2) */
+.hero-gradient h2:first-child {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  line-height: 18px;
+  letter-spacing: 0.28px;
+  color: var(--brand-brown);
+  margin: 0 0 8px;
+}
+
+/* Main heading (second h2) */
+.hero-gradient h2:nth-child(2) {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: var(--accent-font-family);
+  line-height: 1.1;
+  color: var(--brand-brown);
+  margin: 0 0 24px;
+}
+
+/* Paragraph containing CTA links */
+.hero-gradient p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 0;
+  font-size: 16px;
+}
+
+/* CTA links styled as pill buttons */
+.hero-gradient p a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border: 2px solid var(--brand-brown);
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--accent-font-family);
+  line-height: 20px;
+  color: var(--brand-brown);
+  text-decoration: none;
+  background-color: transparent;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.hero-gradient p a:first-child {
+  background-color: var(--brand-brown);
+  color: #fff;
+}
+
+.hero-gradient p a:hover {
+  background-color: var(--brand-brown);
+  color: #fff;
+}
+
+.hero-gradient p a:first-child:hover {
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+/* Product image */
+.hero-gradient picture {
+  display: block;
+}
+
+.hero-gradient img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Desktop layout */
+@media (width >= 900px) {
+  .hero-gradient {
+    flex-direction: row;
+    align-items: center;
+    padding: 48px;
+    min-height: 480px;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  }
+
+  /* Text column (left) - row 2 becomes left in visual order */
+  .hero-gradient > div:last-child {
+    flex: 0 1 50%;
+    max-width: 50%;
+    padding: 20px 48px 20px 0;
+    justify-content: center;
+    order: -1;
+  }
+
+  /* Image column (right) - row 1 becomes right */
+  .hero-gradient > div:first-child {
+    flex: 0 1 50%;
+    max-width: 50%;
+    align-self: center;
+  }
+
+  .hero-gradient h2:first-child {
+    font-size: 14px;
+    margin: 0 0 12px;
+  }
+
+  .hero-gradient h2:nth-child(2) {
+    font-size: 48px;
+    margin: 0 0 32px;
+  }
+
+  .hero-gradient p a {
+    padding: 16px 32px;
+  }
+
+  .hero-gradient img {
+    max-width: 100%;
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-gradient h2:nth-child(2) {
+    font-size: 56px;
+  }
+}

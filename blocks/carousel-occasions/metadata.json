@@ -1,0 +1,42 @@
+{
+  "variantName": "carousel-occasions",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-05-19T19:20:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.mms.com/en-us",
+    "originPage": "M&M'S homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "occasion-cards",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + description + link + carousel of image cards with labels",
+    "buttonCount": 0,
+    "imageCount": 13
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "category/occasion carousels with image cards",
+      "product category sliders",
+      "featured items carousel with image + label pattern"
+    ],
+    "notSuitableFor": [
+      "text-only marquee scrollers",
+      "full-bleed hero carousels",
+      "user-generated content galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us",
+      "/en-us/celebrate/moments/birthday"
+    ],
+    "reuseCount": 3,
+    "lastUsed": "2026-05-19T19:26:47.381669"
+  }
+}

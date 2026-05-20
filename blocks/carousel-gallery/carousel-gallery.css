@@ -1,0 +1,222 @@
+/* Block: carousel-gallery -- user-generated content photo gallery */
+
+/* Horizontal scrolling gallery with pill-shaped images and usernames */
+
+/* Wrapper: full-width section override */
+.carousel-gallery-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Block root */
+.carousel-gallery {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Header section: heading + description + hashtag */
+.carousel-gallery .carousel-gallery-header {
+  text-align: center;
+  padding: 48px 24px 32px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+@media (width >= 900px) {
+  .carousel-gallery .carousel-gallery-header {
+    padding: 80px 24px 40px;
+  }
+}
+
+/* Heading: "fun in every color" */
+.carousel-gallery .carousel-gallery-header h2 {
+  font-family: var(--accent-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--brand-brown);
+  margin: 0 0 16px;
+}
+
+@media (width >= 900px) {
+  .carousel-gallery .carousel-gallery-header h2 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+/* Description paragraph */
+.carousel-gallery .carousel-gallery-header p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+/* Footer: #shareyourfun hashtag below the gallery */
+.carousel-gallery .carousel-gallery-footer {
+  text-align: center;
+  padding: 24px 24px 48px;
+}
+
+.carousel-gallery .carousel-gallery-footer p {
+  font-family: var(--accent-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(0 64 62);
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .carousel-gallery .carousel-gallery-footer p {
+    font-size: 48px;
+  }
+}
+
+/* Slides container: holds nav buttons + scrollable gallery */
+.carousel-gallery .carousel-gallery-slides-container {
+  position: relative;
+  padding: 0 0 32px;
+}
+
+/* Lists reset */
+.carousel-gallery .carousel-gallery-slides {
+  list-style: none;
+  margin: 0;
+  padding: 0 24px;
+  display: flex;
+  overflow: auto hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carousel-gallery .carousel-gallery-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* Gallery slides: visible side-by-side */
+.carousel-gallery .carousel-gallery-slide {
+  flex: 0 0 auto;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start;
+  padding: 0 6px;
+}
+
+@media (width >= 600px) {
+  .carousel-gallery .carousel-gallery-slide {
+    width: 220px;
+    padding: 0 8px;
+  }
+}
+
+@media (width >= 900px) {
+  .carousel-gallery .carousel-gallery-slide {
+    width: 280px;
+    padding: 0 10px;
+  }
+}
+
+/* Image wrapper in slides */
+.carousel-gallery .carousel-gallery-slide-image {
+  width: 100%;
+}
+
+.carousel-gallery .carousel-gallery-slide-image picture {
+  display: block;
+  width: 100%;
+}
+
+/* Photo images: pill-shaped top (arch radius) from source: border-radius: 15984px 15984px 0 0 */
+.carousel-gallery .carousel-gallery-slide-image picture > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 9999px 9999px 0 0;
+  display: block;
+}
+
+/* Username caption */
+.carousel-gallery .carousel-gallery-slide-content {
+  padding: 8px 0 0;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-gallery .carousel-gallery-slide-content p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  line-height: 16px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Navigation buttons */
+.carousel-gallery .carousel-gallery-navigation-buttons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  pointer-events: none;
+  padding: 0 8px;
+}
+
+@media (width >= 900px) {
+  .carousel-gallery .carousel-gallery-navigation-buttons {
+    padding: 0 16px;
+  }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-gallery .carousel-gallery-navigation-buttons button {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  background-color: rgb(255 255 255 / 85%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  transition: background-color 0.2s, opacity 0.2s;
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0.8;
+}
+
+.carousel-gallery .carousel-gallery-navigation-buttons button:hover,
+.carousel-gallery .carousel-gallery-navigation-buttons button:focus-visible {
+  background-color: rgb(255 255 255);
+  opacity: 1;
+}
+
+.carousel-gallery .carousel-gallery-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid var(--brand-brown);
+  border-bottom: 0;
+  border-left: 0;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-gallery .carousel-gallery-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}

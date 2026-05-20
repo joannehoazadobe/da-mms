@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-timeline",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-19T19:27:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.mms.com/en-us/explore/about-us",
+    "originPage": "M&M'S About Us / History page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "timeline-history",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2 columns: image column + text column (eyebrow + heading + paragraph)",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "history/timeline pages with decade-by-decade entries",
+      "about pages with image + text pairs",
+      "alternating image-left/image-right layouts",
+      "brand story sections with featured imagery"
+    ],
+    "notSuitableFor": [
+      "promotional layouts with CTAs in each column",
+      "multi-column grid layouts (3+ columns)",
+      "data comparison or feature comparison layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/explore/about-us"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-19T19:27:00.000Z"
+  }
+}

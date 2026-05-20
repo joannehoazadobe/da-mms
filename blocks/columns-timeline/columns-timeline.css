@@ -1,0 +1,33 @@
+.columns-timeline > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-timeline img {
+  width: 100%;
+}
+
+.columns-timeline > div > div {
+  order: 1;
+}
+
+.columns-timeline > div > .columns-timeline-img-col {
+  order: 0;
+}
+
+.columns-timeline > div > .columns-timeline-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-timeline > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns-timeline > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

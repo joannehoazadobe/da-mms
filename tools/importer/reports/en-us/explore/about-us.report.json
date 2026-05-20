@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://www.mms.com/en-us/explore/about-us",
+  "path": "en-us/explore/about-us",
+  "timestamp": "2026-05-19T19:53:10.461Z",
+  "title": "M&M'S About Us | M&M'S | M&M'S",
+  "template": "explore-page",
+  "blocks": [
+    "columns-timeline",
+    "columns-timeline",
+    "columns-timeline",
+    "columns-timeline",
+    "columns-timeline",
+    "columns-timeline",
+    "columns-timeline"
+  ]
+}

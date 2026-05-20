@@ -1,0 +1,234 @@
+/* Block: carousel-occasions -- Occasions horizontal card carousel */
+
+.carousel-occasions {
+  position: relative;
+  overflow: hidden;
+  color: var(--text-color);
+}
+
+/* Slides container with nav buttons */
+.carousel-occasions .carousel-occasions-slides-container {
+  position: relative;
+}
+
+/* Slides list - horizontal scroll */
+.carousel-occasions .carousel-occasions-slides,
+.carousel-occasions .carousel-occasions-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-occasions .carousel-occasions-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll hidden;
+  gap: 52px;
+  padding: 0 32px;
+}
+
+.carousel-occasions .carousel-occasions-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual slide */
+.carousel-occasions .carousel-occasions-slide {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  width: 192px;
+  min-height: 248px;
+  position: relative;
+}
+
+/* Image cell */
+.carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-image {
+  width: 192px;
+  height: 192px;
+  display: block;
+}
+
+.carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-image picture {
+  display: block;
+  width: 192px;
+  height: 192px;
+  position: static;
+  inset: auto;
+}
+
+.carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-image picture > img {
+  width: 192px;
+  height: 192px;
+  object-fit: cover;
+}
+
+/* Content cell - occasion name */
+.carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-content {
+  position: static;
+  z-index: auto;
+  margin: 0;
+  padding: 0;
+  padding-top: 32px;
+  background-color: transparent;
+  color: var(--text-color);
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--accent-font-family);
+  color: var(--text-color);
+  text-align: center;
+  line-height: 24px;
+  margin: 0;
+}
+
+.carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-content h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-content h3 a:hover {
+  text-decoration: underline;
+}
+
+/* Slide indicators - progress bar style */
+.carousel-occasions .carousel-occasions-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  padding: 24px 32px 0;
+  line-height: 0;
+}
+
+.carousel-occasions .carousel-occasions-slide-indicator button {
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  padding: 0;
+  border-radius: 2px;
+  border: none;
+  background-color: #e0e0e0;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.carousel-occasions .carousel-occasions-slide-indicator {
+  flex: 1;
+}
+
+.carousel-occasions .carousel-occasions-slide-indicator button:disabled,
+.carousel-occasions .carousel-occasions-slide-indicator button:hover,
+.carousel-occasions .carousel-occasions-slide-indicator button:focus-visible {
+  background-color: var(--text-color);
+}
+
+/* Navigation buttons - arrows at edges */
+.carousel-occasions .carousel-occasions-navigation-buttons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-occasions .carousel-occasions-navigation-buttons button {
+  position: relative;
+  width: 48px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--brand-brown);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  transition: color 0.2s;
+}
+
+.carousel-occasions .carousel-occasions-navigation-buttons button.slide-prev {
+  justify-content: flex-start;
+}
+
+.carousel-occasions .carousel-occasions-navigation-buttons button.slide-next {
+  justify-content: flex-end;
+}
+
+.carousel-occasions .carousel-occasions-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 3px solid currentcolor;
+  border-bottom: 0;
+  border-left: 0;
+  height: 12px;
+  width: 12px;
+  position: relative;
+}
+
+.carousel-occasions .carousel-occasions-navigation-buttons button.slide-prev::after {
+  transform: rotate(-135deg);
+}
+
+.carousel-occasions .carousel-occasions-navigation-buttons button.slide-next::after {
+  transform: rotate(45deg);
+}
+
+.carousel-occasions .carousel-occasions-navigation-buttons button:hover {
+  color: var(--text-color);
+}
+
+.carousel-occasions .carousel-occasions-navigation-buttons button:disabled {
+  color: #b9c1ca;
+  cursor: default;
+}
+
+/* Mobile adjustments */
+@media (width < 600px) {
+  .carousel-occasions .carousel-occasions-slides {
+    gap: 24px;
+    padding: 0 16px;
+  }
+
+  .carousel-occasions .carousel-occasions-slide {
+    width: 150px;
+    min-height: auto;
+  }
+
+  .carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-image,
+  .carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-image picture,
+  .carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-image picture > img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-content {
+    padding-top: 16px;
+  }
+
+  .carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-content h3,
+  .carousel-occasions .carousel-occasions-slide .carousel-occasions-slide-content h3 a {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .carousel-occasions .carousel-occasions-navigation-buttons {
+    display: none;
+  }
+
+  .carousel-occasions .carousel-occasions-slide-indicators {
+    padding: 16px;
+  }
+}

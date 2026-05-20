@@ -1,0 +1,42 @@
+{
+  "variantName": "hero-gradient",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-19T19:20:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.mms.com/en-us",
+    "originPage": "M&M'S homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "homepage-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "eyebrow + heading + 2 CTAs + product image",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero sections",
+      "promotional landing pages",
+      "seasonal campaign heroes with gradient backgrounds"
+    ],
+    "notSuitableFor": [
+      "text-only hero sections",
+      "hero sections with background video",
+      "minimal blog post heroes"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us",
+      "/en-us/celebrate/moments/birthday"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-05-19T19:26:47.349249"
+  }
+}

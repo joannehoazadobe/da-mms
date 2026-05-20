@@ -1,0 +1,42 @@
+{
+  "variantName": "carousel-gallery",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-05-19T19:20:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.mms.com/en-us",
+    "originPage": "M&M'S homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "ugc-gallery",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + description + carousel of user photos with attribution",
+    "buttonCount": 0,
+    "imageCount": 8
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "user-generated content galleries",
+      "social media photo carousels",
+      "community/inspiration photo sliders"
+    ],
+    "notSuitableFor": [
+      "product carousels with pricing",
+      "text-only marquees",
+      "category navigation carousels"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us",
+      "/en-us/celebrate/moments/birthday"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-05-19T19:26:47.414178"
+  }
+}

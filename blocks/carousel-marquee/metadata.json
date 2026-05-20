@@ -1,0 +1,42 @@
+{
+  "variantName": "carousel-marquee",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-05-19T19:20:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.mms.com/en-us",
+    "originPage": "M&M'S homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "compact",
+    "purpose": "text-marquee",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "scrolling text keywords separated by ampersands",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "scrolling text tickers",
+      "keyword/tagline marquees",
+      "animated text banners between sections"
+    ],
+    "notSuitableFor": [
+      "image carousels",
+      "product sliders",
+      "content carousels with multiple slides"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us",
+      "/en-us/celebrate/moments/birthday"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-05-19T19:26:47.364926"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "variantName": "columns-promo",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-19T19:20:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.mms.com/en-us",
+    "originPage": "M&M'S homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "promotional-cards",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2 columns with image + text + CTA per column",
+    "buttonCount": 2,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional card layouts with 2 side-by-side items",
+      "category showcase with image + description + CTA",
+      "featured content with imagery and calls-to-action"
+    ],
+    "notSuitableFor": [
+      "text-only side-by-side layouts",
+      "more than 2 columns",
+      "comparison tables or data-driven layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us",
+      "/en-us/celebrate/moments/birthday"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-05-19T19:26:47.398443"
+  }
+}

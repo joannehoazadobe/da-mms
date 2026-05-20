@@ -1,0 +1,93 @@
+/* Block: carousel-marquee -- horizontal scrolling text ticker */
+
+/* Full-width wrapper override */
+.carousel-marquee-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.carousel-marquee {
+  overflow: hidden;
+  padding: 64px 0;
+  color: var(--brand-brown);
+}
+
+/* Track rows */
+.carousel-marquee .carousel-marquee-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 0;
+  width: max-content;
+  animation: marquee-scroll-left 30s linear infinite;
+}
+
+.carousel-marquee .carousel-marquee-track-reverse {
+  animation: marquee-scroll-right 30s linear infinite;
+}
+
+/* Track content group */
+.carousel-marquee .carousel-marquee-track-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Word items */
+.carousel-marquee .carousel-marquee-word {
+  font-family: var(--accent-font-family);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 56px;
+  color: var(--brand-brown);
+  white-space: nowrap;
+}
+
+/* Ampersand separators */
+.carousel-marquee .carousel-marquee-amp {
+  font-family: var(--accent-font-family);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--brand-brown);
+  margin: 12px 16px 0;
+  white-space: nowrap;
+}
+
+/* Keyframes for infinite scroll */
+@keyframes marquee-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-16.6667%);
+  }
+}
+
+@keyframes marquee-scroll-right {
+  0% {
+    transform: translateX(-16.6667%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Mobile adjustments */
+@media (width < 900px) {
+  .carousel-marquee {
+    padding: 40px 0;
+  }
+
+  .carousel-marquee .carousel-marquee-word {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .carousel-marquee .carousel-marquee-amp {
+    font-size: 20px;
+    margin: 0 10px;
+  }
+}

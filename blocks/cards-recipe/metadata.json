@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-recipe",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-19T19:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.mms.com/en-us/recipes",
+    "originPage": "M&M'S Recipes hub page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "category-navigation",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "grid of image cards with category labels and links",
+    "buttonCount": 0,
+    "imageCount": 5
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "recipe category hub pages",
+      "category navigation grids with circular/rounded images",
+      "content hub pages with image + label pattern",
+      "sub-category landing pages"
+    ],
+    "notSuitableFor": [
+      "product cards with pricing and CTAs",
+      "text-heavy cards with descriptions",
+      "cards requiring multiple action buttons"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/recipes"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-19T19:30:00.000Z"
+  }
+}

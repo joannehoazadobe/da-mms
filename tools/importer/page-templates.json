@@ -1,0 +1,273 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": ["https://www.mms.com/en-us"],
+      "description": "Main site homepage with hero banners, featured products, and promotional content",
+      "blocks": [
+        {
+          "name": "hero-gradient",
+          "instances": ["main#content > div > section:first-child .content-container:first-child .MuiGrid-container"]
+        },
+        {
+          "name": "carousel-marquee",
+          "instances": ["main#content .css-ko3u0t"]
+        },
+        {
+          "name": "carousel-occasions",
+          "instances": ["#featured-occasions-slides", "main#content div[id^='product-ct']"]
+        },
+        {
+          "name": "columns-promo",
+          "instances": ["main#content section.css-1icvowc"]
+        },
+        {
+          "name": "carousel-gallery",
+          "instances": ["main#content section.css-1ob3jhi:last-of-type"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-hero",
+          "name": "Hero",
+          "selector": "main#content > div > section:first-child",
+          "style": null,
+          "blocks": ["hero-gradient"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-marquee",
+          "name": "Scrolling Marquee",
+          "selector": "main#content > div > section:first-child .content-container ~ div",
+          "style": "gold",
+          "blocks": ["carousel-marquee"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-mission",
+          "name": "Mission Statement",
+          "selector": "section.css-zvpdw2",
+          "style": null,
+          "blocks": [],
+          "defaultContent": ["section.css-zvpdw2 h2", "section.css-zvpdw2 h1", "section.css-zvpdw2 p", "section.css-zvpdw2 a"]
+        },
+        {
+          "id": "section-occasions",
+          "name": "Celebrate Every Moment",
+          "selector": "section.css-1ob3jhi:has(#featured-occasions-slides)",
+          "style": null,
+          "blocks": ["carousel-occasions"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-products",
+          "name": "Featured Products",
+          "selector": "section.css-1ob3jhi:has(div[id^='product-ct'])",
+          "style": null,
+          "blocks": ["carousel-occasions"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-promo",
+          "name": "Personalization CTA",
+          "selector": "section.css-1icvowc",
+          "style": null,
+          "blocks": ["columns-promo"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-gallery",
+          "name": "Social Proof Gallery",
+          "selector": "main#content section.css-1ob3jhi:last-of-type",
+          "style": null,
+          "blocks": ["carousel-gallery"],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "celebrate-moment",
+      "urls": [
+        "https://www.mms.com/en-us/celebrate/moments",
+        "https://www.mms.com/en-us/celebrate/moments/birthday",
+        "https://www.mms.com/en-us/celebrate/moments/wedding",
+        "https://www.mms.com/en-us/celebrate/moments/graduation"
+      ],
+      "description": "Celebration and occasions landing pages featuring themed products and inspiration",
+      "blocks": [
+        {
+          "name": "hero-gradient",
+          "instances": ["main#content > div > section:first-child .MuiGrid-container"]
+        },
+        {
+          "name": "carousel-marquee",
+          "instances": ["main#content .MuiTypography-h1BigLightSerif"]
+        },
+        {
+          "name": "carousel-occasions",
+          "instances": ["main#content div[id^='product-']"]
+        },
+        {
+          "name": "columns-promo",
+          "instances": ["main#content section:has(h3)"]
+        },
+        {
+          "name": "carousel-gallery",
+          "instances": ["main#content section:last-of-type:has(img[alt*='@'])"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-hero",
+          "name": "Hero",
+          "selector": "main#content > div > section:first-child",
+          "style": null,
+          "blocks": ["hero-gradient"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-marquee",
+          "name": "Marquee",
+          "selector": "main#content > div > section:nth-child(2)",
+          "style": null,
+          "blocks": ["carousel-marquee"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-products",
+          "name": "Featured Products",
+          "selector": "main#content section:has(div[id^='product-'])",
+          "style": null,
+          "blocks": ["carousel-occasions"],
+          "defaultContent": ["main#content section:has(div[id^='product-']) h2", "main#content section:has(div[id^='product-']) p"]
+        },
+        {
+          "id": "section-personalize",
+          "name": "Personalize",
+          "selector": "main#content section:has(h3)",
+          "style": null,
+          "blocks": ["columns-promo"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-gallery",
+          "name": "User Gallery",
+          "selector": "main#content section:last-of-type",
+          "style": null,
+          "blocks": ["carousel-gallery"],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "explore-page",
+      "urls": [
+        "https://www.mms.com/en-us/explore/about-us",
+        "https://www.mms.com/en-us/explore",
+        "https://www.mms.com/en-us/explore/mms-characters",
+        "https://www.mms.com/en-us/explore/mms-stores"
+      ],
+      "description": "Brand exploration pages with about info, characters, and store locations",
+      "blocks": [
+        {
+          "name": "columns-timeline",
+          "instances": ["main#content section:not(:first-child):not(:last-child)"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-intro",
+          "name": "Intro Hero",
+          "selector": "main#content > div > section:first-child",
+          "style": "lentils-intro",
+          "blocks": [],
+          "defaultContent": ["main#content section:first-child h2", "main#content section:first-child h3", "main#content section:first-child p"]
+        },
+        {
+          "id": "section-timeline",
+          "name": "Timeline Entries",
+          "selector": "main#content section:not(:first-child):not(:last-child)",
+          "style": null,
+          "blocks": ["columns-timeline"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-closing",
+          "name": "Closing CTA",
+          "selector": "main#content > div > section:last-child",
+          "style": "lentils-closing",
+          "blocks": [],
+          "defaultContent": ["main#content section:last-child h2", "main#content section:last-child h3", "main#content section:last-child p", "main#content section:last-child a"]
+        }
+      ]
+    },
+    {
+      "name": "recipe-page",
+      "urls": [
+        "https://www.mms.com/en-us/recipes",
+        "https://www.mms.com/en-us/halloween-recipes",
+        "https://www.mms.com/en-us/holiday-recipes",
+        "https://www.mms.com/en-us/everyday-recipes"
+      ],
+      "description": "Recipe hub and category pages featuring M&M's themed recipes",
+      "blocks": [
+        {
+          "name": "cards-recipe",
+          "instances": ["main#content ul li a[href*='recipes']"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-heading",
+          "name": "Page Heading",
+          "selector": "main#content > div > section:first-child",
+          "style": null,
+          "blocks": [],
+          "defaultContent": ["main#content section:first-child h1", "main#content section:first-child h2", "main#content section:first-child p"]
+        },
+        {
+          "id": "section-categories",
+          "name": "Recipe Categories",
+          "selector": "main#content > div > section:nth-child(2)",
+          "style": null,
+          "blocks": ["cards-recipe"],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "category-page",
+      "urls": [
+        "https://www.mms.com/en-us/c/shop-c.html",
+        "https://www.mms.com/en-us/shop/chocolate-c.html",
+        "https://www.mms.com/en-us/shop/gifts-c.html",
+        "https://www.mms.com/en-us/shop/best-sellers-c.html"
+      ],
+      "description": "Product category listing pages with filters and product grid",
+      "blocks": []
+    },
+    {
+      "name": "product-page",
+      "urls": [
+        "https://www.mms.com/en-us/personalized-mms/congratulations-yay-party-favors/ct1118-p.html",
+        "https://www.mms.com/en-us/gifts/graduation-class-gift-jar/ct2196-p.html"
+      ],
+      "description": "Product detail pages with images, descriptions, pricing, and customization options",
+      "blocks": []
+    },
+    {
+      "name": "utility-page",
+      "urls": [
+        "https://www.mms.com/en-us/faqs",
+        "https://www.mms.com/en-us/contact-us",
+        "https://www.mms.com/en-us/shipping-information",
+        "https://www.mms.com/en-us/terms-and-conditions"
+      ],
+      "description": "Support and informational pages including FAQs, contact, shipping, and legal terms",
+      "blocks": []
+    }
+  ]
+}
