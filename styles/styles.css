@@ -1,250 +1,363 @@
-@import url('brand.css');
+/*
+ * styles/styles.css
+ *
+ * Global stylesheet for the MMS Edge Delivery Services site.
+ * Follows the AEM boilerplate pattern: CSS custom properties first,
+ * then minimal layout & typography, then utility classes.
+ *
+ * This file is loaded eagerly (in head.html) — keep it lean for LCP.
+ * Below-the-fold styles go in styles/lazy-styles.css.
+ */
 
-/* fallback font for All Together Sans */
-@font-face {
-  font-family: "All Together Sans Fallback";
-  size-adjust: 100%;
-  src: local('Arial');
+/* ============================================================
+   1. CSS CUSTOM PROPERTIES (design tokens)
+   ============================================================ */
+
+:root {
+  /* Brand colours */
+  --color-brand-yellow: #ffd200;
+  --color-brand-brown: #3d1e0f;
+  --color-brand-red: #e4002b;
+  --color-brand-blue: #0057a8;
+  --color-brand-green: #00883a;
+  --color-brand-orange: #f4762a;
+
+  /* Neutral */
+  --color-text-dark: #1a1a1a;
+  --color-text-mid: #4a4a4a;
+  --color-text-light: #fff;
+  --color-bg-light: #fff;
+  --color-bg-off: #f7f7f5;
+  --color-bg-dark: #1a1a1a;
+  --color-border: #e0e0e0;
+
+  /* Typography */
+  --body-font-family: "helvetica neue", helvetica, arial, sans-serif;
+  --heading-font-family: "helvetica neue", helvetica, arial, sans-serif;
+  --fixed-font-family: "Courier New", courier, monospace;
+
+  /* Font sizes (mobile-first) */
+  --body-font-size-xxs: 0.688rem;  /*  11px */
+  --body-font-size-xs:  0.75rem;   /*  12px */
+  --body-font-size-s:   0.875rem;  /*  14px */
+  --body-font-size-m:   1rem;      /*  16px */
+  --body-font-size-l:   1.125rem;  /*  18px */
+  --body-font-size-xl:  1.25rem;   /*  20px */
+
+  --heading-font-size-xs:  1rem;      /*  16px */
+  --heading-font-size-s:   1.25rem;   /*  20px */
+  --heading-font-size-m:   1.5rem;    /*  24px */
+  --heading-font-size-l:   2rem;      /*  32px */
+  --heading-font-size-xl:  2.5rem;    /*  40px */
+  --heading-font-size-xxl: 3rem;      /*  48px */
+
+  /* Layout */
+  --nav-width: 1440px;
+  --content-width: 1200px;
+  --section-padding: 3rem 1.5rem;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+
+  /* Border radius */
+  --radius-s: 2px;
+  --radius-m: 4px;
+  --radius-l: 8px;
+  --radius-pill: 999px;
 }
 
-/* fallback font for All Together Serif */
-@font-face {
-  font-family: "All Together Serif Fallback";
-  size-adjust: 100%;
-  src: local('Times New Roman');
+/* ============================================================
+   2. RESET / BASE
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  display: none;
   margin: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.5;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-light);
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Body when nav is open — prevent scroll */
+body[data-nav-open] {
+  overflow: hidden;
+}
+
+/* Hide during page loading to avoid FOUC */
 body.appear {
   display: block;
 }
 
-header {
-  height: var(--header-height);
-}
+/* ============================================================
+   3. TYPOGRAPHY
+   ============================================================ */
 
-header .header,
-footer .footer {
-  visibility: hidden;
-}
-
-header .header[data-block-status="loaded"],
-footer .footer[data-block-status="loaded"] {
-  visibility: visible;
-}
-
-@media (width >= 900px) {
-  body[data-breadcrumbs] {
-    --header-height: calc(var(--nav-height) + var(--breadcrumbs-height));
-  }
-}
-
-/* headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 700;
-  line-height: 1.1;
-  scroll-margin: 40px;
-  color: var(--brand-brown);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+  margin: 0 0 0.75em;
+  color: var(--color-text-dark);
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 { font-size: var(--heading-font-size-xl); }
+h2 { font-size: var(--heading-font-size-l); }
+h3 { font-size: var(--heading-font-size-m); }
+h4 { font-size: var(--heading-font-size-s); }
+h5 { font-size: var(--heading-font-size-xs); }
+h6 { font-size: var(--body-font-size-l); }
 
-p,
-dl,
-ol,
-ul,
-pre,
-blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+@media (min-width: 768px) {
+  h1 { font-size: var(--heading-font-size-xxl); }
+  h2 { font-size: var(--heading-font-size-xl); }
+  h3 { font-size: var(--heading-font-size-l); }
 }
 
 p {
-  font-family: var(--accent-font-family);
-  font-size: 30px;
-  line-height: 1.1;
-  color: var(--brand-brown);
+  margin: 0 0 1em;
 }
 
-@media (width >= 900px) {
-  p {
-    font-size: 30px;
-  }
+p:last-child {
+  margin-bottom: 0;
 }
 
-code,
-pre {
-  font-size: var(--body-font-size-s);
-}
-
-pre {
-  padding: 16px;
-  border-radius: 8px;
-  background-color: var(--light-color);
-  overflow-x: auto;
-  white-space: pre;
-}
-
-main > div {
-  margin: 40px 16px;
-}
-
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
-
-/* links */
-a:any-link {
-  color: var(--link-color);
-  text-decoration: none;
-  word-break: break-word;
-}
-
-a:hover {
-  color: var(--link-hover-color);
+a {
+  color: var(--color-brand-brown);
   text-decoration: underline;
 }
 
-/* buttons - reset for EDS */
-main .button-container {
-  display: inline;
+a:hover {
+  text-decoration: none;
 }
 
-main a.button:any-link {
-  box-sizing: border-box;
-  display: inline-block;
-  max-width: 100%;
-  margin: 12px 0;
-  border: 2px solid var(--brand-brown);
-  border-radius: 2.4em;
-  padding: 0.5em 1.5em;
-  font-family: var(--body-font-family);
-  font-style: normal;
+strong {
   font-weight: 700;
-  font-size: var(--body-font-size-s);
-  line-height: 1.25;
-  text-align: center;
+}
+
+em {
+  font-style: italic;
+}
+
+/* ============================================================
+   4. IMAGES
+   ============================================================ */
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   5. BUTTONS
+   ============================================================ */
+
+a.button,
+button.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  border-radius: var(--radius-s);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
   text-decoration: none;
-  background-color: var(--brand-brown);
-  color: #fff;
   cursor: pointer;
-  text-overflow: ellipsis;
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+              border-color var(--transition-fast);
+  border: 2px solid transparent;
+  line-height: 1;
   white-space: nowrap;
 }
 
-main a.button:hover,
-main a.button:focus {
-  background-color: var(--text-color);
-  border-color: var(--text-color);
-  cursor: pointer;
+a.button.primary,
+button.button.primary {
+  background-color: var(--color-brand-brown);
+  color: #fff;
+  border-color: var(--color-brand-brown);
 }
 
-main a.button.secondary {
+a.button.primary:hover,
+button.button.primary:hover {
   background-color: transparent;
-  border: 2px solid var(--brand-brown);
-  color: var(--brand-brown);
+  color: var(--color-brand-brown);
 }
 
-main a.button.secondary:hover,
-main a.button.secondary:focus {
-  background-color: var(--brand-brown);
+a.button.secondary,
+button.button.secondary {
+  background-color: transparent;
+  color: var(--color-brand-brown);
+  border-color: var(--color-brand-brown);
+}
+
+a.button.secondary:hover,
+button.button.secondary:hover {
+  background-color: var(--color-brand-brown);
   color: #fff;
 }
 
-button:disabled,
-button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
+/* Yellow CTA variant — used on hero sections */
+a.button.accent,
+button.button.accent {
+  background-color: var(--color-brand-yellow);
+  color: var(--color-text-dark);
+  border-color: var(--color-brand-yellow);
 }
 
-main img {
-  max-width: 100%;
+a.button.accent:hover,
+button.button.accent:hover {
+  background-color: var(--color-text-dark);
+  color: var(--color-brand-yellow);
+}
+
+/* ============================================================
+   6. PAGE LAYOUT
+   ============================================================ */
+
+main {
+  display: block;
+}
+
+/* Skip-to-content link (accessibility) */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 9999;
+  background: var(--color-brand-yellow);
+  color: var(--color-text-dark);
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+  top: 0;
   width: auto;
   height: auto;
 }
 
+/* Sections */
+main .section {
+  padding: var(--section-padding);
+}
+
+main .section > div {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+/* Full-bleed sections (e.g. hero, announcement bar) */
+main .section.full-width > div {
+  max-width: 100%;
+  padding: 0;
+}
+
+/* Dark section variant */
+main .section.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+/* Yellow section variant */
+main .section.brand {
+  background-color: var(--color-brand-yellow);
+  color: var(--color-text-dark);
+}
+
+/* Off-white section variant */
+main .section.light-bg {
+  background-color: var(--color-bg-off);
+}
+
+/* ============================================================
+   7. DEFAULT CONTENT (outside blocks)
+   ============================================================ */
+
+main .default-content-wrapper p.button-container {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+/* ============================================================
+   8. ICONS
+   ============================================================ */
+
 .icon {
   display: inline-block;
-  height: 24px;
-  width: 24px;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
 }
 
-.icon img {
-  height: 100%;
+.icon img,
+.icon svg {
   width: 100%;
+  height: 100%;
 }
 
-/* sections */
-main > .section {
-  margin: 40px 0;
+/* ============================================================
+   9. LOADING / LCP
+   ============================================================ */
+
+/* Prevent layout shift while blocks load */
+main .section[data-section-status='loading'],
+main .section[data-section-status='initialized'] {
+  display: none;
 }
 
-main > .section > div {
-  max-width: var(--content-max-width);
-  margin: auto;
-  padding: 0 24px;
+/* ============================================================
+   10. FOCUS / ACCESSIBILITY
+   ============================================================ */
+
+:focus-visible {
+  outline: 3px solid var(--color-brand-yellow);
+  outline-offset: 3px;
+  border-radius: var(--radius-s);
 }
 
-main > .section:first-of-type {
-  margin-top: 0;
-}
+/* ============================================================
+   11. PRINT
+   ============================================================ */
 
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
+@media print {
+  .announcement-bar-wrapper,
+  .header-wrapper,
+  .footer-wrapper {
+    display: none;
   }
-}
-
-/* section metadata styles */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
-}
-
-main .section.dark {
-  background-color: var(--dark-color);
-  color: #fff;
-  margin: 0;
-  padding: 40px 0;
-}
-
-main .section.gold {
-  background-color: var(--gold-color);
-  margin: 0;
-  padding: 20px 0;
-}
-
-main .section.lentils-intro,
-main .section.lentils-closing {
-  background-color: var(--background-color);
-  text-align: center;
-  margin: 0;
-  padding: 60px 0;
 }
