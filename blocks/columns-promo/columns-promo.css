@@ -1,11 +1,9 @@
-/* Block: columns-promo -- Promotional cards with colored backgrounds */
-
-/* Source: mms.com "let's get personal-ized" section */
+/* Block: columns-promo -- 3 cards side by side on desktop, stacked on mobile */
 
 .columns-promo > div {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .columns-promo > div > div {
@@ -16,6 +14,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
 /* Card color variants */
@@ -28,30 +27,17 @@
 }
 
 /* Images */
-.columns-promo img {
+.columns-promo picture {
+  display: block;
   width: 80%;
+  margin: 0 auto 16px;
+}
+
+.columns-promo img {
+  width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
-}
-
-/* Description paragraphs */
-.columns-promo p {
-  font-family: var(--body-font-family);
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 24px;
-  color: #fff;
-  margin: 0 0 24px;
-}
-
-.columns-promo > div > div > p:first-child {
-  margin: 0 0 16px;
-  width: 100%;
-}
-
-.columns-promo > div > div:nth-child(3) p {
-  color: var(--brand-brown);
 }
 
 /* Headings */
@@ -69,53 +55,70 @@
   color: var(--brand-brown);
 }
 
-/* CTA buttons - style as underline links, push to bottom */
+/* Description paragraphs */
+.columns-promo p {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #fff;
+  margin: 0 0 16px;
+}
+
+.columns-promo > div > div:nth-child(3) p {
+  color: var(--brand-brown);
+}
+
+/* CTA links - pill button style */
 .columns-promo .button-container {
   margin: 0;
   margin-top: auto;
 }
 
 .columns-promo a.button:any-link {
+  display: inline-flex;
+  align-items: center;
   background-color: transparent;
-  border: none;
-  border-bottom: 2px solid #fff;
-  border-radius: 0;
-  padding: 4px 0;
-  font-family: var(--accent-font-family);
+  border: 2px solid #fff;
+  border-radius: 2em;
+  padding: 12px 24px;
+  font-family: var(--body-font-family);
   font-size: 12px;
   font-weight: 700;
-  line-height: 16px;
+  line-height: 1;
   color: #fff;
   text-decoration: none;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .columns-promo a.button:hover,
 .columns-promo a.button:focus {
-  background-color: transparent;
+  background-color: #fff;
   border-color: #fff;
-  opacity: 0.8;
+  color: rgb(14 116 225);
 }
 
 /* Third card CTA: dark color */
 .columns-promo > div > div:nth-child(3) a.button:any-link {
   color: var(--brand-brown);
-  border-bottom-color: var(--brand-brown);
+  border-color: var(--brand-brown);
 }
 
 .columns-promo > div > div:nth-child(3) a.button:hover,
 .columns-promo > div > div:nth-child(3) a.button:focus {
+  background-color: var(--brand-brown);
   border-color: var(--brand-brown);
+  color: #fff;
 }
 
 @media (width >= 900px) {
   .columns-promo > div {
     flex-direction: row;
-    gap: 24px;
+    gap: 16px;
   }
 
   .columns-promo > div > div {
-    flex: 1;
-    padding: 40px 24px 32px;
+    flex: 1 1 33.333%;
+    padding: 32px 24px;
   }
 }
